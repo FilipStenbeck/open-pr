@@ -1,0 +1,40 @@
+{
+    "name": "open-pr-server",
+    "version": "0.0.1",
+    "description": "Service for exposing github functionality",
+    "main": "index.js",
+    "scripts": {
+        "start": "node dist/lib/app.js",
+        "dev": "nodemon lib/app.ts",
+        "build": "tsc -p .",
+        "docker:build": "docker build . -t open-pr-server:latest",
+        "clean": "rimraf dist/*",
+        "lint": "prettier --write \"**/*.{html,js,json,ts,yaml}\"",
+        "lint:ci": "prettier --check \"**/*.{html,js,json,ts,yaml}\"",
+        "test": "jest --passWithNoTests",
+        "test:ci": "yarn test"
+    },
+    "author": "Filip Stenbeck",
+    "license": "ISC",
+    "dependencies": {
+        "@octokit/rest": "^16.34.0",
+        "@octokit/types": "^1.0.0",
+        "@types/cors": "^2.8.6",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "4.17.1"
+    },
+    "devDependencies": {
+        "@types/express": "4.17.1",
+        "@types/node": "12.11.5",
+        "cz-conventional-changelog": "2.1.0",
+        "husky": "2.4.1",
+        "jest": "24.8.0",
+        "nodemon": "1.19.4",
+        "prettier": "1.18.2",
+        "rimraf": "3.0.0",
+        "semantic-release": "15.13.21",
+        "ts-node": "8.4.1",
+        "typescript": "3.6.4"
+    }
+}
